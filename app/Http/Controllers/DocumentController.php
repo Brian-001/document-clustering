@@ -13,7 +13,7 @@ class DocumentController extends Controller
 {
     public function index()
     {
-        $documents = Document::paginate(10);
+        $documents = Document::orderBy('id', 'desc')->paginate(10);
         return view('documentz.index', compact('documents'));
     }
 
